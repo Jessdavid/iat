@@ -1,0 +1,142 @@
+************************************************
+BLACK-WHITE IAT -- Standard format using faces
+includes a flowers/insects IAT warm-up task
+
+Created by Brian Nosek
+Last modified on 11-05-03
+
+flowers/insects IAT (warmup) 
+Black/White IAT 
+
+(1) Order of 'compatible' and 'incompatible' blocks is counterbalanced between subjects. 
+(2) Practice blocks use 20 response trials
+(3) Critical blocks use 40 response trials
+(4) The reverse single discrimination block uses 40 trials to reduce task order effect (Nosek et al., 2003)
+(5) Trials in 4 category sorting alternate between category (flower/insect or black/white) and attribute (good/bad) dimensions
+(6) Background is set to black
+(7) Category labels and stimulus items appear in GREEN 
+(8) Attribute labels and stimulus items appear in WHITE
+************************************************
+
+
+<defaults> / font = ("Arial", -21, 400, 0, 34)
+/ txbgcolor = (0, 0, 0) / screencolor = (0, 0, 0)
+/ pretrialpause = 0 / posttrialpause = 150 </defaults>
+
+***********************************************************************************************************
+<text flowers> / items = flowers / color = (0, 255, 0) / font = ("Arial", -48, 700, 0, 34) / numitems = 4 </text>
+<item flowers> /1 = "Daffodil" /2 = "Rose" /3 = "Daisy" /4 = "Sunflower" </item>
+<text insects> / items = insects / color = (0, 255, 0) / font = ("Arial", -48, 700, 0, 34) / numitems = 4 </text>
+<item insects> /1 = "Bugs" /2 = "Mosquito" /3 = "Caterpillar" /4 = "Cricket" </item>
+<picture black> / items = ("bf14.gif", "bf23.gif", "bf56.gif", "bm14.gif", "bm23.gif", "bm56.gif")  / numitems = 6 </picture>
+<picture white> / items = ("wf2.gif", "wf3.gif", "wf6.gif", "wm1.gif", "wm4.gif", "wm6.gif") / numitems = 6 </picture>
+<text Good> / items = good / color = (255, 255, 255) / font = ("Arial", -48, 700, 0, 34) / numitems = 10 </text>
+<item good>  /1 = "celebrating" /2 = "pleasure" /3 = "happy" /4 = "friendly" /5 = "joyful" /6 = "loving" 
+/7 = "beautiful" /8 = "smiling" /9 = "glee" /10 = "cheerful" </item>
+<text Bad> / items = bad / color = (255, 255, 255) / font = ("Arial", -48, 700, 0, 34) / numitems = 10 </text>
+<item bad> /1 = "horrible" /2 = "angry" /3 = "terrible" /4 = "noxious" /5 = "tragic" /6 = "unpleasant" 
+/7 = "hate" /8 = "destroy" /9 = "brutal" /10 = "nasty" </item>
+
+<text remind1> / items = (" ") / color = (0, 255, 0) / numitems = 1 / font = ("Arial", -35, 700, 0, 34) </text>
+<text error> / items = ("X") / color = (255, 0, 0) / numitems = 1 / position = (50,60) / font = ("Arial", -35, 700, 0, 34) </text>
+<text flowersrightremind> / items = ("Flowers") / position = (85,20) / color = (0, 255, 0) / numitems = 1 / font = ("Arial", -35, 700, 0, 34) </text>
+<text insectsleftremind>  / items = ("Insects") / position = (15,20) / color = (0, 255, 0) / numitems = 1 / font = ("Arial", -35, 700, 0, 34) </text>
+<text flowersleftremind> / items = ("Flowers") / position = (15,20) / color = (0, 255, 0) / numitems = 1 / font = ("Arial", -35, 700, 0, 34) </text>
+<text insectsrightremind>  / items = ("Insects") / position = (85,20) / color = (0, 255, 0) / numitems = 1 / font = ("Arial", -35, 700, 0, 34) </text>
+<text blackrightremind> / items = ("Black American") / color = (0, 255, 0) / position = (85,20) / numitems = 1 / font = ("Arial", -35, 700, 0, 34) </text>
+<text blackleftremind> / items = ("Black American") / color = (0, 255, 0) / position = (15,20) / numitems = 1 / font = ("Arial", -35, 700, 0, 34) </text>
+<text whiterightremind> / items = ("White American") / color = (0, 255, 0) / position = (85,20) / numitems = 1 / font = ("Arial", -35, 700, 0, 34) </text>
+<text whiteleftremind> / items = ("White American") / color = (0, 255, 0) / position = (15,20) / numitems = 1 / font = ("Arial", -35, 700, 0, 34) </text>
+<text goodrightremind> / items = ("Good") / position = (85,30) / color = (255, 255, 255) / numitems = 1 / font = ("Arial", -35, 700, 0, 34) </text>
+<text badleftremind> / items = ("Bad") / position = (15,30) / color = (255, 255, 255) / numitems = 1 / font = ("Arial", -35, 700, 0, 34) </text>
+<text badrightremind> / items = ("Bad") / position = (85,30) / color = (255, 255, 255) / numitems = 1 / font = ("Arial", -35, 700, 0, 34) </text>
+<text Goodleftremind> / items = ("Good") / position = (15,30) / color = (255, 255, 255) / numitems = 1 / font = ("Arial", -35, 700, 0, 34) </text>
+<text remind> / items = ("Check categories - Press space bar when ready") / position = (50, 75) / color = (255, 255, 255) / numitems = 1 </text>
+
+<page beginIAT>
+For this portion of the study, words will appear one at a time in the 
+middle of the screen.  Classify those words into groups which 
+will be designated with labels appearing on the top half of the screen.  All words 
+belonging to the groups on the left will be classified with the "a" key.  All words 
+belonging to the groups on the right will be classified with the ";" key. 
+Classify the words as quickly as possible while making as few mistakes as possible.  
+Accuracy and speed are both important.^^
+Pay close attention to the group labels, they will change from block to block. 
+Direct any questions to the experimenter. Press the space bar to begin.
+</page>
+
+<trial flowersright> / correctresponse = (";") / frames = [1=flowers] / responsemode = correct / validresponse = ("a", ";") </trial>
+<trial insectsleft> / correctresponse = ("a") / frames = [1=insects] / responsemode = correct / validresponse = ("a", ";") </trial>
+<trial flowersleft> / correctresponse = ("a") / frames = [1=flowers] / responsemode = correct / validresponse = ("a", ";") </trial>
+<trial insectsright> / correctresponse = (";") / frames = [1=insects] / responsemode = correct / validresponse = ("a", ";") </trial>
+<trial goodright> / correctresponse = (";") / frames = [1=good] / responsemode = correct / validresponse = ("a", ";") </trial>
+<trial badleft> / correctresponse = ("a") / frames = [1=bad] / responsemode = correct / validresponse = ("a", ";") </trial>
+<trial badright> / correctresponse = (";") / frames = [1=bad] / responsemode = correct / validresponse = ("a", ";") </trial>
+<trial goodleft> / correctresponse = ("a") / frames = [1=good] / responsemode = correct / validresponse = ("a", ";") </trial>
+<trial blackright> / correctresponse = (";") / frames = [1=black] / responsemode = correct / validresponse = ("a", ";") </trial>
+<trial blackleft> / correctresponse = ("a") / frames = [1=black] / responsemode = correct / validresponse = ("a", ";") </trial>
+<trial whiteright> / correctresponse = (";") / frames = [1=white] / responsemode = correct / validresponse = ("a", ";") </trial>
+<trial whiteleft> / correctresponse = ("a") / frames = [1=white] / responsemode = correct / validresponse = ("a", ";") </trial>
+<trial reminder> / correctresponse = (" ") / frames = [1=remind] / responsemode = correct / validresponse = ("a", ";") </trial> 
+
+<block blank> </block>
+<block blackgood>
+/ bgstim = (whiteleftremind, goodrightremind, badleftremind, blackrightremind)
+/ trials = [1,22 = reminder; 3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61 = random (goodright, badleft);
+  2,4,6,8,10,12,14,16,18,20,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62 = random (whiteleft, blackright)] / errormessage = true(error, 200) </block>
+<block blackbad>
+/ bgstim = (whiterightremind, goodrightremind, badleftremind, blackleftremind)
+/ trials = [1,22 = reminder; 3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61 = random (goodright, badleft);
+  2,4,6,8,10,12,14,16,18,20,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62 = random (blackleft, whiteright)] / errormessage = true(error, 200) </block>
+<block flowersgood>
+/ bgstim = (insectsleftremind, goodrightremind, badleftremind, flowersrightremind)
+/ trials = [1,18 = reminder; 3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61  = random (goodright, badleft);
+  2,4,6,8,10,12,14,16,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62  = random (insectsleft, flowersright)] / errormessage = true(error, 200) </block>
+<block flowersbad>
+/ bgstim = (insectsrightremind, goodrightremind, badleftremind, flowersleftremind)
+/ trials = [1,18 = reminder; 3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61  = random (goodright, badleft);
+  2,4,6,8,10,12,14,16,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62 = random (flowersleft, insectsright)] / errormessage = true(error, 200) </block>
+<block badgood> / preinstructions = (beginIAT)
+/ bgstim = (goodrightremind, badleftremind) / trials = [1 = reminder; 2-17 = random (goodright, badleft)] / errormessage = true(error, 200) </block>
+<block blackwhite>
+/ bgstim = (blackleftremind, whiterightremind)
+/ trials = [1 = reminder; 2-21 = random (blackleft, whiteright)] / errormessage = true(error, 200) </block>
+<block whiteblack>
+/ bgstim = (whiteleftremind, blackrightremind)
+/ trials = [1 = reminder; 2-21 = random (whiteleft, blackright)] / errormessage = true(error, 200) </block>
+<block blackwhite2>
+/ bgstim = (blackleftremind, whiterightremind)
+/ trials = [1 = reminder; 2-41 = random (blackleft, whiteright)] / errormessage = true(error, 200) </block>
+<block whiteblack2>
+/ bgstim = (whiteleftremind, blackrightremind)
+/ trials = [1 = reminder; 2-41 = random (whiteleft, blackright)] / errormessage = true(error, 200) </block>
+<block flowersinsects>
+/ bgstim = (flowersleftremind, insectsrightremind)
+/ trials = [1 = reminder; 2-21 = random (flowersleft, insectsright)] / errormessage = true(error, 200) </block>
+<block insectsflowers>
+/ bgstim = (insectsleftremind, flowersrightremind)
+/ trials = [1 = reminder; 2-21 = random (flowersright, insectsleft)] / errormessage = true(error, 200) </block>
+<block flowersinsects2>
+/ bgstim = (flowersleftremind, insectsrightremind)
+/ trials = [1 = reminder; 2-41 = random (flowersleft, insectsright)] / errormessage = true(error, 200) </block>
+<block insectsflowers2>
+/ bgstim = (insectsleftremind, flowersrightremind)
+/ trials = [1 = reminder; 2-41 = random (flowersright, insectsleft)] / errormessage = true(error, 200) </block>
+************************************************************************************************************
+<data> / columns = [date time build subject trialcode blocknum trialnum latency response correct stimulus blockcode] / format = TAB </data>
+
+<expt> / blocks = [1=badgood; 2=flowersinsects; 3=flowersbad; 4=insectsflowers2; 5=flowersgood; 
+                   6=badgood; 7=blackwhite; 8=blackbad; 9=whiteblack2; 10=blackgood]
+/subjects = (1 of 4)</expt>
+
+<expt> / blocks = [1=badgood; 2=insectsflowers; 3=flowersgood; 4=flowersinsects2; 5=flowersbad; 
+                   6=badgood; 7=blackwhite; 8=blackbad; 9=whiteblack2; 10=blackgood]
+/subjects = (2 of 4)</expt>
+
+<expt> / blocks = [1=badgood; 2=flowersinsects; 3=flowersbad; 4=insectsflowers2; 5=flowersgood; 
+                   6=badgood; 7=whiteblack; 8=blackgood; 9=blackwhite2; 10=blackbad]
+/subjects = (3 of 4)</expt>
+
+<expt> / blocks = [1=badgood; 2=insectsflowers; 3=flowersgood; 4=flowersinsects2; 5=flowersbad; 
+                   6=badgood; 7=whiteblack; 8=blackgood; 9=blackwhite2; 10=blackbad]
+/subjects = (4 of 4)</expt>
