@@ -29,6 +29,11 @@
         grid-row-start: 2;
     }
 
+    .wordDisplay {
+        grid-column-start: 3;
+        grid-row-start: 2;
+    }
+
 .display {
     background-color: white;
 }
@@ -38,7 +43,12 @@
     grid-row-start: 3;
 }
 
+.imageTwo {
+    width: 100px;
+    height: 100px;
+}
+
 .button {
     grid-column-start: 3;
-    grid-row-start: 2;
+    grid-row-start: 4;
 }
