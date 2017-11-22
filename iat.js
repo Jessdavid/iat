@@ -7,7 +7,7 @@ const goodWords = ['enjoy', 'magnificent', 'triumph', 'cheer', 'pleasure', 'cher
 
 const badWords = ['tragic', 'awful', 'rotten', 'selfish', 'horrific', 'humiliate', 'grief', 'scorn'];
 
-const tryAgain = ['redx.png'];
+const redX = 'redx.png'
 
 
 let i = 0;
@@ -20,19 +20,12 @@ const changeImage = () => {
     }
 };
 
-// let gender = document.getElementById('gender').innerText;
-
+const hide = () => {
+    document.getElementById('gender').style.display = "none";
+}
 
 window.onkeyup = (event) => {
     let key = event.keyCode ? event.keyCode : event.which;
-
-    // for(let word of goodWords) {
-    //     if(key == 69) {
-    //         console.log(word);
-    //         newWord = word.concat('foh shizzle');
-    //         console.log(newWord);
-    //     } 
-    // }
 
     if (key == 73) {
         hello.innerText = goodWords[i]
@@ -44,7 +37,17 @@ window.onkeyup = (event) => {
         } 
     } else {
         console.log('huh?');
-        gender.setAttribute('src', tryAgain[0]);
+        gender.setAttribute('src', redX);
+        setTimeout(hide, 2000 );
     }
  }
-    
+
+// let gender = document.getElementById('gender').innerText;
+
+    // for(let word of goodWords) {
+//     if(key == 69) {
+//         console.log(word);
+//         newWord = word.concat('foh shizzle');
+//         console.log(newWord);
+//     } 
+// }
