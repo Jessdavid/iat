@@ -9,13 +9,17 @@ const badWords = ['tragic', 'awful', 'rotten', 'selfish', 'horrific', 'humiliate
 
 const redX = 'redx.png'
 
+const KEYS = {
+    I : 73,
+    E: 69
+}
 
 let i = 0;
 
-const changeImage = () => {
+// const imgNode = document.createElement("img");
 
-    ('#hello').html("<img />");
-    hello.setAttribute("src", bias[i]);
+const changeImage = () => {  
+    gender.setAttribute("src", bias[i]);
     i++;
     if (bias.length === i) {
         i = 0;
@@ -25,63 +29,66 @@ const changeImage = () => {
 const hide = () => {
     let elem = document.getElementById('gender');
     elem.style.opacity = "0";
-}
+};
 
 keyPressCount = 0;
 
 window.onkeyup = (event) => {
     let key = event.keyCode ? event.keyCode : event.which;
-    if (key == 73) {
-        keyPressCount++
+    
+    measureTime = (event) => {
+        let start = new Date();
+        console.log('start', start);
+
+        // here is where the activity to be measured occurs
+        
+        if (key == KEYS.I) {
+            keyPressCount++
+            let start = Date.now();
+            hello.innerText = goodWords[i]
+            i++;
+            if (goodWords.length === i) {
+                i = 0;   
+            } 
+        }
+
+        let end = new Date();
+        console.log('end', end);
+        elapsed = (end - start);
+        console.log('elapsed', elapsed);
     }
-
-    console.log('keypress', keyPressCount);
-
     
-    
-    if (key == 73) {
-        hello.innerText = goodWords[i]
-        i++;
-        console.log('length', goodWords.length);
-        if (goodWords.length === i) {
-            console.log('i', i);
-            i = 0;   
-        } 
+
+    if (keyPressCount === 8) {
+        hello.innerText = "Categorize the words";
+        let parentDiv = hello.parentNode;
+        parentDiv.replaceChild(gender, hello);
     }
 
     if (keyPressCount > bias.length) {
-        console.log(`toooo big + ${keyPressCount}`);
-        hello.innerText = "Categorize the words";
         changeImage();
-    }
+    };
 
- 
-
-    if (key == 69) {
-        console.log('huh?');
+    if (key == KEYS.E) {
         gender.setAttribute('src', redX);
         setTimeout(hide, 2000 );
         gender.style.opacity = "1";
     }
-
+    
+    measureTime();
 }
 
-// elem = document.getElementById('gender')
-
-// elem.style.display = "none" ? elem.style.display = "initial";
-
-// let gender = document.getElementById('gender').innerText;
-
-    // for(let word of goodWords) {
-//     if(key == 69) {
-//         console.log(word);
-//         newWord = word.concat('foh shizzle');
-//         console.log(newWord);
-//     } 
-// }
-
-// if the number of keypresses is greater than the length of the array, then display the message 'You've 
-// categorized all the work
 
 
 
+// we want to measure the elapsed time between one keypress to the next keypress 
+// we also need to keep the time of the last keypress and the time of the next keypress and then estimate 
+// the difference
+
+// we need to perform this measurement for every keypress
+
+//step 1: get the time of the keypress
+// step 2:  get the time of the next keypress
+// step 3:  store the time of the keypress
+// step 4: run the function for every time the keypress occurs
+// step 5:  store the keypress in a chart
