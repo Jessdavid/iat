@@ -16,8 +16,6 @@ const KEYS = {
 
 let i = 0;
 
-// const imgNode = document.createElement("img");
-
 const changeImage = () => {  
     gender.setAttribute("src", bias[i]);
     i++;
@@ -32,13 +30,13 @@ const hide = () => {
 };
 
 keyPressCount = 0;
+timeLapses = [];
 
 window.onkeyup = (event) => {
     let key = event.keyCode ? event.keyCode : event.which;
     
     measureTime = (event) => {
         let start = new Date();
-        console.log('start', start);
 
         // here is where the activity to be measured occurs
         
@@ -53,9 +51,11 @@ window.onkeyup = (event) => {
         }
 
         let end = new Date();
-        console.log('end', end);
         elapsed = (end - start);
-        console.log('elapsed', elapsed);
+        timeLapses.push(elapsed);
+
+        total = timeLapses.reduce((acc, curr) => acc + curr, 0);
+        average = total / timeLapses.length;
     }
     
 
@@ -65,30 +65,15 @@ window.onkeyup = (event) => {
         parentDiv.replaceChild(gender, hello);
     }
 
-    if (keyPressCount > bias.length) {
+    if (keyPressCount >= bias.length) {
         changeImage();
     };
 
     if (key == KEYS.E) {
         gender.setAttribute('src', redX);
-        setTimeout(hide, 2000 );
+        setTimeout(hide, 2000);
         gender.style.opacity = "1";
     }
     
     measureTime();
 }
-
-
-
-
-// we want to measure the elapsed time between one keypress to the next keypress 
-// we also need to keep the time of the last keypress and the time of the next keypress and then estimate 
-// the difference
-
-// we need to perform this measurement for every keypress
-
-//step 1: get the time of the keypress
-// step 2:  get the time of the next keypress
-// step 3:  store the time of the keypress
-// step 4: run the function for every time the keypress occurs
-// step 5:  store the keypress in a chart
