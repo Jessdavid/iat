@@ -44,9 +44,27 @@ window.onkeyup = (event) => {
         if (key === KEYS.I || key === KEYS.E) {
             keyPressCount++
             let start = Date.now();
-            hello.innerText = allWords[i]
-            i++;
+            let word = hello.innerText = allWords[i]
+            console.log('display word', word);
             
+            switch (true) {
+                case (goodWords.includes(word)) && (key === KEYS.I):
+                console.log('yahh good word');
+                break;
+                case (goodWords.includes(word)) && (key !== KEYS.I):
+                console.log('oh wrong key for GOOD WORD');
+                break;
+                case (badWords.includes(word)) && (key === KEYS.E):
+                console.log('ohh bad word');
+                break;
+                case (badWords.includes(word)) && (key !== KEYS.E):
+                console.log('ohh wrong key for BAD WORD');
+                break;
+                default:
+                console.log('actually none of these options');
+            }
+            
+            i++;
             if (allWords.length === i) {
                 i = 0;   
             } 
@@ -61,16 +79,7 @@ window.onkeyup = (event) => {
     }
 
     allWords.forEach(checkingInclusion = (word) => {
-        switch (true) {
-            case (goodWords.includes(word)) && (key === KEYS.I):
-                console.log('yahh good word');
-            case (goodWords.includes(word)) && (key !== KEYS.I):
-                console.log('oh wrong key for GOOD WORD');
-            case (badWords.includes(word)) && (key === KEYS.E):
-                console.log('ohh bad word');
-            case (badWords.includes(word)) && (key !== KEYS.E):
-                console.log('ohh wrong key for BAD WORD');
-        }
+        
     });
     
     if (keyPressCount === 12) {
@@ -87,6 +96,8 @@ window.onkeyup = (event) => {
 }
 
 // need to think about if I'm accessing and checking the words in the array properly
+// moved case statement inside the function but it's still activating all the case conditions,
+// so read more on case and see if you can make it work
 
 //     gender.setAttribute('src', redX);
 //     setTimeout(hide, 2000);
