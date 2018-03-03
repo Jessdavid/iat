@@ -32,13 +32,9 @@
 
     .wordDisplay {
         grid-column-start: 8;
-        grid-column-end: 12;
+        grid-column-end: 11;
         grid-row-start: 2;
     }
-
-.display {
-    background-color: white;
-}
 
 .imageOne {
     grid-column-start: 3;
@@ -46,10 +42,11 @@
 }
 
 .imageTwo {
-    grid-column-start: 8;
+    grid-column-start: 10;
     grid-row-start: 2;
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
+    background-color: transparent;
 }
 
 .button {

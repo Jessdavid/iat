@@ -3,7 +3,6 @@ const gender = document.getElementById('gender');
 
 const bias = ["blackwhitedemo/1.gif", "blackwhitedemo/2.gif", "blackwhitedemo/3.gif", "blackwhitedemo/4.gif", "blackwhitedemo/5.gif", "blackwhitedemo/6.gif", "blackwhitedemo/7.gif", "blackwhitedemo/8.gif","blackwhitedemo/9.gif"];
 
-
 const goodWords = ['enjoy', 'magnificent', 'triumph', 'cheer'];
 
 const badWords = ['tragic', 'awful', 'rotten', 'selfish'];
@@ -18,6 +17,40 @@ const KEYS = {
 
 let i = 0;
 
+const hide = () => {
+    let elem = document.getElementById('gender');
+    elem.style.opacity = "0";
+};
+
+wrongWord = () => {
+    gender.setAttribute('src', redX);
+    setTimeout(hide, 2000);
+    gender.style.opacity = "1";
+};
+
+let First = function () {
+    this.a = 5;
+    this.b = 2;
+    console.log('hello', (this.a + this.b));
+    return (this.a * this.b);
+}
+
+let p = Object.create(f);
+
+
+p.tryFunction = function () {
+    wrongWord();
+    console.log('its the try function');
+    return 4+3;
+};
+
+console.log('try running p as a function', p.tryFunction());
+console.log('the b of p', p.a);
+console.log('o', o());
+
+f.prototype.b = 3;
+f.prototype.c = 4;
+
 const changeImage = () => {  
     gender.setAttribute("src", bias[i]);
     i++;
@@ -26,13 +59,10 @@ const changeImage = () => {
     }
 };
 
-const hide = () => {
-    let elem = document.getElementById('gender');
-    elem.style.opacity = "0";
-};
 
 keyPressCount = 0;
 timeLapses = [];
+
 
 window.onkeyup = (event) => {
     let key = event.keyCode ? event.keyCode : event.which;
@@ -45,20 +75,19 @@ window.onkeyup = (event) => {
             keyPressCount++
             let start = Date.now();
             let word = hello.innerText = allWords[i]
-            console.log('display word', word);
             
             switch (true) {
                 case (goodWords.includes(word)) && (key === KEYS.I):
                 console.log('yahh good word');
                 break;
                 case (goodWords.includes(word)) && (key !== KEYS.I):
-                console.log('oh wrong key for GOOD WORD');
+                wrongWord();
                 break;
                 case (badWords.includes(word)) && (key === KEYS.E):
                 console.log('ohh bad word');
                 break;
                 case (badWords.includes(word)) && (key !== KEYS.E):
-                console.log('ohh wrong key for BAD WORD');
+                wrongWord();
                 break;
                 default:
                 console.log('actually none of these options');
@@ -95,13 +124,12 @@ window.onkeyup = (event) => {
     measureTime();
 }
 
-// need to think about if I'm accessing and checking the words in the array properly
-// moved case statement inside the function but it's still activating all the case conditions,
-// so read more on case and see if you can make it work
-
-//     gender.setAttribute('src', redX);
-//     setTimeout(hide, 2000);
-//     gender.style.opacity = "1";
+// how to display the X properly, move the box - why does the white line appear at the beginning?
+// adding instructions for beginning the test
+// displaying the first word after the instructions
+// creating the prototypes
+// maybe after a button clicked and chosing the right test?
+// take a look at the IAT tests itself
 
 
 
