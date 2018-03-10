@@ -35,7 +35,11 @@ let First = function () {
     return (this.a * this.b);
 }
 
-let p = Object.create(f);
+console.log('first', First());
+let p = Object.create(First);
+// so if I try to run the p function, it says it's not a function but I can create an instance but the instance
+// shows that its a function... WTF?!?!
+console.log('try running p as a function', p);
 
 
 p.tryFunction = function () {
@@ -43,13 +47,6 @@ p.tryFunction = function () {
     console.log('its the try function');
     return 4+3;
 };
-
-console.log('try running p as a function', p.tryFunction());
-console.log('the b of p', p.a);
-console.log('o', o());
-
-f.prototype.b = 3;
-f.prototype.c = 4;
 
 const changeImage = () => {  
     gender.setAttribute("src", bias[i]);
