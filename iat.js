@@ -3,10 +3,37 @@ const gender = document.getElementById('gender');
 
 const bias = ["blackwhitedemo/1.gif", "blackwhitedemo/2.gif", "blackwhitedemo/3.gif", "blackwhitedemo/4.gif", "blackwhitedemo/5.gif", "blackwhitedemo/6.gif", "blackwhitedemo/7.gif", "blackwhitedemo/8.gif","blackwhitedemo/9.gif"];
 
-const goodWords = ['enjoy', 'magnificent', 'triumph', 'cheer'];
+class Word {
+    constructor(word, type){
+        this.word = word;
+        this.type = type;
+    }
+}
 
-const badWords = ['tragic', 'awful', 'rotten', 'selfish'];
-const allWords = goodWords.concat(badWords);
+class GoodWord extends Word {
+    constructor(word) {
+    super(word, true)
+    }
+}
+
+class BadWord extends Word {
+    constructor(word) {
+        super()
+        this.word = word;
+        this.type = false;
+    }
+}
+
+const wordType = [
+    new GoodWord('enjoy'), 
+    new GoodWord('magnificent'), 
+    new GoodWord('triumph'), 
+    new GoodWord('cheer'),
+    new BadWord('tragic'),
+    new Word('awful', false),
+    new Word('rotten', false),
+    new Word('selfish', false)
+];
 
 const redX = 'redx.png'
 
@@ -26,26 +53,6 @@ wrongWord = () => {
     gender.setAttribute('src', redX);
     setTimeout(hide, 2000);
     gender.style.opacity = "1";
-};
-
-let First = function () {
-    this.a = 5;
-    this.b = 2;
-    console.log('hello', (this.a + this.b));
-    return (this.a * this.b);
-}
-
-console.log('first', First());
-let p = Object.create(First);
-// so if I try to run the p function, it says it's not a function but I can create an instance but the instance
-// shows that its a function... WTF?!?!
-console.log('try running p as a function', p);
-
-
-p.tryFunction = function () {
-    wrongWord();
-    console.log('its the try function');
-    return 4+3;
 };
 
 const changeImage = () => {  
@@ -71,19 +78,21 @@ window.onkeyup = (event) => {
         if (key === KEYS.I || key === KEYS.E) {
             keyPressCount++
             let start = Date.now();
-            let word = hello.innerText = allWords[i]
+            let word = hello.innerText = wordType[i].word
+            let type = wordType[i].type
             
+            // here we want to revamp to based on the flag, should something different happen?
             switch (true) {
-                case (goodWords.includes(word)) && (key === KEYS.I):
+                case (type === true) && (key === KEYS.I):
                 console.log('yahh good word');
                 break;
-                case (goodWords.includes(word)) && (key !== KEYS.I):
+                case (type === true) && (key !== KEYS.I):
                 wrongWord();
                 break;
-                case (badWords.includes(word)) && (key === KEYS.E):
+                case (type === false) && (key === KEYS.E):
                 console.log('ohh bad word');
                 break;
-                case (badWords.includes(word)) && (key !== KEYS.E):
+                case (type === false) && (key !== KEYS.E):
                 wrongWord();
                 break;
                 default:
@@ -91,7 +100,7 @@ window.onkeyup = (event) => {
             }
             
             i++;
-            if (allWords.length === i) {
+            if (wordType.length === i) {
                 i = 0;   
             } 
         }
@@ -104,10 +113,6 @@ window.onkeyup = (event) => {
         average = total / timeLapses.length;
     }
 
-    allWords.forEach(checkingInclusion = (word) => {
-        
-    });
-    
     if (keyPressCount === 12) {
         hello.innerText = "Categorize the words";
         let parentDiv = hello.parentNode;
